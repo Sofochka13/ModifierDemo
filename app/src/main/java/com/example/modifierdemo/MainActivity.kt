@@ -18,6 +18,11 @@ import com.example.modifierdemo.ui.theme.ModifierDemoTheme
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.height
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.res.painterResource
 
 class MainActivity : ComponentActivity() {
@@ -38,15 +43,23 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun DemoScreen(modifier: Modifier = Modifier) {
     val mymodifier = modifier
-        .padding(all = 10.dp)
         .border(width = 2.dp, color = Color.Black)
+        .padding(all = 10.dp)
 
-    Text(
-        "Hello Compose",
-        mymodifier,
-        fontSize = 40.sp,
-        fontWeight = FontWeight.Bold
-    )
+    Column(
+        Modifier.padding(20.dp),
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Center
+    ) {
+        Text(
+            "Hello Compose",
+            mymodifier,
+            fontSize = 40.sp,
+            fontWeight = FontWeight.Bold
+        )
+        Spacer(Modifier.height(16.dp))
+        CustomImage(R.drawable.vacation)
+    }
 }
 
 @Preview(showBackground = true)
