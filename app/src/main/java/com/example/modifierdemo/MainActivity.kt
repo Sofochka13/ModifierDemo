@@ -41,7 +41,7 @@ fun DemoScreen(modifier: Modifier = Modifier) {
 
     Text(
         "Hello Compose",
-        modifier = mymodifier,
+        modifier,
         fontSize = 40.sp,
         fontWeight = FontWeight.Bold
     )
