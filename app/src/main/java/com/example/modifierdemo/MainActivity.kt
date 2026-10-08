@@ -17,6 +17,8 @@ import androidx.compose.ui.unit.sp
 import com.example.modifierdemo.ui.theme.ModifierDemoTheme
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import androidx.compose.foundation.Image
+import androidx.compose.ui.res.painterResource
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -47,12 +49,19 @@ fun DemoScreen(modifier: Modifier = Modifier) {
     )
 }
 
-
-
 @Preview(showBackground = true)
 @Composable
 fun DefaultPreview() {
     ModifierDemoTheme {
         DemoScreen()
     }
+}
+
+@Composable
+fun CustomImage(image: Int, modifier: Modifier = Modifier) {
+    Image(
+        painter = painterResource(image),
+        contentDescription = null,
+        modifier
+    )
 }
